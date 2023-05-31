@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kaksi oliota</h1>
+    <div id="oliot"></div>
+    <script>
+//luodaan 1. henkilö
+const hlo1 = {
+    etunimi: "Jan",
+sukunimi: "Janinen",
+ika: 24, 
+lempivari: "sininen"
+}
+const hlo2 = {
+    etunimi: "Vilma",
+sukunimi: "Vilmanen",
+ika: 27, 
+lempivari: "pinkki"
+}
+console.log(hlo1);
+console.log(hlo2);
+document.getElementById("oliot").innerHTML = "Etunimi: " + hlo1.etunimi + "<br/>" + "Ikä: " + hlo1.ika;
+    </script>
+</body>
+</html>

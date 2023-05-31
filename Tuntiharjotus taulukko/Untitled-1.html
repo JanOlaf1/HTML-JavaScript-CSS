@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nimitaulukkokokeilu</h1>
+    <div id="nimilista"></div>
+    <div id="nimilista2"></div>
+    <script>
+        // esitellään nimitaulukko, jossa alkuarvona 3 kurssilaiset etunimet
+        const etunimet = ["Juho", "Katariina", "Daniel"];
+        console.log(etunimet);
+         // lisätään taulukkoon johanna
+         etunimet.push("Johanna");
+         console.log(etunimet)
+         // Lisätään taulukkoon Anastasia
+         // etunimet.push("ANastasia");
+         etunimet[4] = "Anastasia";
+         etunimet.sort();
+         console.log(etunimet);
+         etunimet.reverse();
+         etunimet.push("Santeri")
+         console.log(etunimet);
+         const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+console.log(points)
+console.log("Taulukon eka tieto " + etunimet[0]);
+console.log("Taulukon vika tieto " + etunimet[4]); // ei toimi aina.
+console.log("Taulukon vika tieto " + etunimet[etunimet.length-1]); // toimii aina
+document.getElementById("nimilista").innerHTML = etunimet;
+let nimetTxt = "";
+for (let paikkanro = 0; paikkanro < etunimet.length; paikkanro++){
+    nimetTxt += etunimet[paikkanro] + "<br>";
+    document.getElementById("nimilista2").innerHTML = nimetTxt;
+}
+             </script>
+</body>
+</html>

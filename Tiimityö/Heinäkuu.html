@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="FIN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="javascript.js"></script>
+    
+</head>
+<body>
+    
+  <div class="kuukausi">
+    <a href="Toukokuu.html">Toukokuu</a>
+    <a  href="Kesäkuu.html">Kesäkuu</a>
+    <a class="active" href="Heinäkuu.html">Heinäkuu</a>
+    <a href="elokuu.html">Elokuu</a>
+</div>      
+
+        <div class="kalenteri">
+          <div class="kuu">
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="vkoid"></p>
+              </div>  
+          </div>
+          <h2>Heinäkuu 2023</h2>
+          <h3>Paina viikon numeroa saadaksesi lisätietoa!</h3>
+          <div class="viikko" id="viikko7">
+            <div class="paiva">Viikko</div>
+            <div class="paiva">Maanantai</div>
+            <div class="paiva">Tiistai</div>
+            <div class="paiva">Keskiviikko</div>
+            <div class="paiva">Torstai</div>
+            <div class="paiva">Perjantai</div>
+            <div class="paiva">Lauantai</div>
+            <div class="paiva">Sunnuntai</div>
+          </div>
+          <div class="viikko" id="viikko8" onclick="naytamodal('TAPAHTUMA TIETOJA')"></button>     
+            <div class="paiva" id="heina26">26</div>
+            <div class="paiva" id="heina1"></div>
+            <div class="paiva" id="heina2"></div>
+            <div class="paiva" id="heina3"></div>
+            <div class="paiva" id="heina4"></div>
+            <div class="paiva" id="heina5"></div>
+            <div class="paiva" id="heina6">1</div>
+            <div class="paiva" id="heina7">2</div>
+          </div>
+          
+          <div class="viikko" id="viikko23" onclick="naytamodal('TAPAHTUMA TIETOJA')"></button>
+            <div class="paiva" id="heina8">27</div>
+            <div class="paiva" id="heina9">3</div>
+            <div class="paiva" id="heina10">4</div>
+            <div class="paiva" id="heina11">5</div>
+            <div class="paiva" id="heina12">6</div>
+            <div class="paiva" id="heina13">7</div>
+            <div class="paiva" id="heina14">8</div>
+            <div class="paiva" id="heina15">9</div>
+          </div>
+          
+          <div class="viikko" id="viikko24" onclick="naytamodal('TAPAHTUMA TIETOJA')"></button>
+            <div class="paiva" id="heina16">28</div>
+            <div class="paiva" id="heina17">10</div>
+            <div class="paiva" id="heina18">11</div>
+            <div class="paiva" id="heina19">12</div>
+            <div class="paiva" id="heina20">13</div>
+            <div class="paiva" id="heina21">14</div>
+            <div class="paiva" id="heina22">15</div>
+            <div class="paiva" id="heina23">16</div>
+          </div>
+          
+          <div class="viikko" id="viikko25" onclick="naytamodal(*tekstii)"></button>
+            <div class="paiva" id="heina24">29</div>
+            <div class="paiva" id="heina25">17</div>
+            <div class="paiva" id="heina26">18</div>
+            <div class="paiva" id="heina27">19</div>
+            <div class="paiva" id="heina28">20</div>
+            <div class="paiva" id="heina29">21</div>
+            <div class="paiva" id="heina30">22</div>
+            <div class="paiva" id="heina31">23</div>
+          </div>
+          
+          <div class="viikko" id="viikko26" onclick="naytamodal('tekstiiii')"></button>
+            <div class="paiva" id="paiva33">30</div>
+            <div class="paiva" id="paiva34">24</div>
+            <div class="paiva" id="paiva35">25</div>
+            <div class="paiva" id="paiva36">26</div>
+            <div class="paiva" id="paiva37">27</div>
+            <div class="paiva" id="paiva38">28</div>
+            <div class="paiva" id="paiva39">29</div>
+            <div class="paiva" id="paiva39">30</div>
+          </div>
+            <div class="viikko" id="viiko26" onclick="naytamodal('tekstiiiiiiii')"></button>
+              <div class="paiva" id="paiva33">31</div>
+              <div class="paiva" id="paiva34">31</div>
+              <div class="paiva" id="paiva35"></div>
+              <div class="paiva" id="paiva36"></div>
+              <div class="paiva" id="paiva37"></div>
+              <div class="paiva" id="paiva38"></div>
+              <div class="paiva" id="paiva39"></div>
+              <div class="paiva" id="paiva39"></div>
+            
+          </div>
+        </div>      
+        <div id="kello"></div>
+
+<script>
+function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    hours = hours < 10 ? "0" + hours : hours;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    document.getElementById("kello").innerHTML = hours + ":" + minutes + ":" + seconds;
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+var viikkonumero;
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+function naytamodal(nro) {
+  
+  modal.style.display = "block";
+  viikkonumero = nro;
+  document.getElementById("vkoid").innerHTML = viikkonumero;
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+<div id="ww_867f911d16c1d" v='1.3' loc='id' a='{"t":"ticker","lang":"fi","sl_lpl":1,"ids":["wl9042"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://oneweather.org/fi/helsinki/25_days/" id="ww_867f911d16c1d_u" target="_blank">25 vrk Helsinki sää</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_867f911d16c1d"></script>
+</body>
+</html>
